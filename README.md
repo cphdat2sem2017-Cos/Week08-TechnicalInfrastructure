@@ -1,9 +1,9 @@
-#Week 8: Technical infrastructure
+# Week 8: Technical infrastructure
 
-##What will happen:
+## What will happen:
 This week is a preparation for starting on the semester project. In this week we will focus on establishing the technical infrastructure for the project, in particular how to use git and github for collaboration.
 
-##Studymaterial:
+## Studymaterial:
 The book: Pro GIT [Mainly chapter 2-4](https://git-scm.com/book/en/v2) 
  
 Good explanation of [the 3 workflows](https://www.atlassian.com/git/tutorials/comparing-workflows).
