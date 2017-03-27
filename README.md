@@ -43,6 +43,7 @@ The plan for the day is:
 - You will have 2*30 minutes to discuss the critiques based on the issue.
 	- If new issues comes up in the discussion, remember to put them on git.
 
+#### [Review plan](cupcakegroups.md)
 
 ### Tuesday and Wednesday: [2 days on GIT](presentation.md):
 These 2 days covers what you need to know to work efficiently as a team using git and github for code collaboration, version control and backup.  
