@@ -389,8 +389,9 @@ copy is what the branch looked like on your last commit to it.
 
 ### Lets demo
 <img align="right" src="img/demoman.png" />  
+
 **Demonstrate creating branches and commits in each branc**
-<br><br><br><br><br>
+
 -`git branch development` // or `git checkout -b development` -creates and checks out in one command.
 - `git checkout development`
 - `vim somefile.txt` //Add some text in the new file and hit Esc :wq to save and quit
@@ -462,8 +463,9 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 
 ### Lets demo
 <img align="right" src="img/demoman.png" />  
+
 **Merge conflicts**
-<br><br><br><br><br>
+
 1. create a new repo
 2. make some file - add - commit
 3. Create a new branch <mybranch>
@@ -485,7 +487,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 7. merge the two branches and resolve conflict
 
 
-### Rebase
+### Rebase (ADVANCED)
 - To get a straight commit history
   - As if the work done in the 2 branches were done sequentially (not in parallel)
   - `git rebase <branch name>` means our current branch will have all its unique commits **copied** onto the <branch name> branch
@@ -498,7 +500,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 
 
 
-### Changing (moving commits) existing branches
+### Changing (moving commits) existing branches (ADVANCED)
 - HEAD is the currently checkedout commit
 - Normally Head points to a branch name
 - Detaching HEAD
@@ -552,7 +554,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 3. Move feature1 to the head of development
 
 ### Git issues
-- Issues are like user stories in a scrum team or
+- Issues are like tasks in a scrum team or
 - Task tracking system with notifications, discussion forum and project planning tool.
 - [See more here](https://guides.github.com/features/issues/)
 
@@ -575,11 +577,11 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 	4. add Assignees to each issue
 
 
-### Git forking
+### Git forking (OTHER WORKFLOW)
 
 
 
-### Git pull request
+### Git pull request (OTHER WORKFLOWS)
 pull requests are a mechanism for a developer to notify team members that they have completed a feature. Once their feature branch is ready, the developer files a pull request  
 
 
