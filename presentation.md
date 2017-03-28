@@ -1,5 +1,5 @@
 
-#GIT (2 days)
+# GIT (2 days)
 ![](img/Git-Cheat-Sheet.png) 
 
 
@@ -7,14 +7,13 @@
 Get the book [here](https://git-scm.com/book/en/v2)  
 [Use this interactive tutorial](http://learngitbranching.js.org/) to learn git branching  
 
-##Content
+## Content
 Creating repository on github  
 - Add collaborators (team members)  
 - Cloning repository  
 - git commands like: add, commit, push, fetch, merge  
 - Create branches  
-- Merge branches with rebase  
-- ing a project (vs. branching)  
+- Merge branches with rebaseing a project (vs. branching)  
 - Making a pull request  
 - Using git issues   
 - Labels and notifications  
@@ -24,7 +23,7 @@ Creating repository on github
 	- **Forking workflow** (good for opensource projects with untrusted third parties)
 
 
-##Overview
+## Overview
 - Version control system and why we need it
 	- Generations of VCS
 	- Local version control (copy folder and rename to higher version)
@@ -44,12 +43,12 @@ Creating repository on github
 
 - **3 states of data**
 	1. Git repository ( .git folder contains info for the whole commit history)
-	2. Staging area / the index (af file in .git contains info about what goes into the next commit
+	2. Staging area / the index (a file in .git contains info about what goes into the next commit
 	3. Working directory (files on harddrive that we are working on now).
 - **Git workflow**
 	1. You modify files in your working directory (file in your local repo actually on the harddisk). 
 	2. You stage the files, adding snapshots of them to your staging area. (git add <filename>)
-	3. You do a commit, which takes the files as they are in the staging area and stores that snapshot  permanently to your Git directory.  
+	3. You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.  
 
 - **3 stages of files**
 	1. committed (file in its actual form is registered in the git repo
@@ -63,7 +62,7 @@ Creating repository on github
 
 ## Day1: Getting started
 This topic is about using git from the command-line tool: git bash  <br>  
-1. Install git (get it [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))  
+1. You should have git-bash from week 1 - if not. Install git-bash (get it [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))  
 2. Download the free e-book: Pro Git (from [here](https://git-scm.com/book/en/v2))  
 3. Make an account on github.com  
 4. Create your firts repo.
@@ -84,11 +83,12 @@ This topic is about using git from the command-line tool: git bash  <br>
 	- `git help` For overall commands
 	- `git help <some command>` get specific info about the command.
 
-###First repository
-`git clone <remote repo>` or  
+### First repository
+Best choice for most situations: Make project on github, then `git clone <remote repo>` or  
 `git init` inside a directory to make it a git repo.
 
-###Lets demo
+### Lets demo
+
 <img align="right" src="img/demoman.png" />  
 **2 demos:**  
 1. git repo from github and    
@@ -111,13 +111,13 @@ This topic is about using git from the command-line tool: git bash  <br>
  - git init
  - git add, commit
  - on github create new repo
- - git remote add origin <remote url> e.g. url to github repositoyr
+ - git remote add origin <remote url> e.g. url to github repository
  - git push -u <host><branch> eg. `git push -u origin master` -u is short for --set-upstream
 
 Hint: you can work with git locally without ever needing to push to remote (if you dont need to collaborate with others / or backup in cloud)
 
 
-###Small exercise done in pairs
+### Small exercise done in pairs
 - Person1 greates a new git repository in github
 - Then add the other person as collaborator
 - Then add a README.md file to the project
@@ -141,9 +141,9 @@ Hint: you can work with git locally without ever needing to push to remote (if y
 
 Finally delete the repository both remotely and locally
 
+### [A note on gitignore](gitignore.md)
 
-
-###Lets demo
+### Lets demo
 <img align="right" src="img/demoman.png" />  
 **Demonstrating how files move through the states with git status**
 <br><br><br><br><br>
@@ -166,7 +166,7 @@ Finally delete the repository both remotely and locally
 - Inspect the folder (file is no more)
 
 
-###Small exercise
+### Small exercise
 Work individually and locally  
 - Create a new git repository (use `git init`)  
 - add a file to the folder (add and commit)  
@@ -185,13 +185,13 @@ Work individually and locally
 	   2. an unstaged version  
 
 
-###Git diff
+### Git diff
 - 2 major purposes
   1. See exactly what you have changed but not yet added/indexed
   2. See what has changed in the index since last commit
 
 
-###Lets demo
+### Lets demo
 <img align="right" src="img/demoman.png" />  
 **Demonstrate git diff**
 <br><br><br><br><br>
@@ -204,14 +204,14 @@ Work individually and locally
 
 
 
-###Remove stuff from staged area with git
+### Remove stuff from staged area with git
 - Keep file in working tree BUT remove from staged area  
 	- Like you would need if you added some unwanted files before making the .gitignore file
 	- `git rm --cached <file name>` or if everything: `git rm --cached -r .` (-r for recursive)
 
 
 
-###View the project history - git log
+### View the project history - git log
 - `git log`
 	- lists the commits made in that
 repository in reverse chronological order
@@ -225,37 +225,37 @@ repository in reverse chronological order
 
 
 
-###Undo stuff
-####Overwrite previous commit message
+### Undo stuff
+#### Overwrite previous commit message
 - Only if nothing new has been staged
 - `git commit --amend`
 
 
 
-####Undo staging (remove file from staged area)
+#### Undo staging (remove file from staged area)
 If you did git add and regret it
 - `git reset HEAD <filename>`
 	- Takes the file out of the index
 
 
-####Undo changes since last commit on a particular file
+#### Undo changes since last commit on a particular file
 - `git chekout HEAD -- <filename>` //
 	- This changes the working tree to be like the last commit
 - **WARNING**: this is irreversible since git overwrites the file with other context there is no way to get back the original content.
 
 
 
-####Undo changes since last commit on all files
+#### Undo changes since last commit on all files
 - `git reset --hard HEAD~1` //changes working area back to state as it was at last commit
 
 
 
-####Undo last commit entirely
+#### Undo last commit entirely
 - `git revert HEAD` //keeps the last commit in history but adds a new commit with the content of the previous (Working tree will be restore to how it was at the time of the last commit)
 
 
 
-###Small exercise
+### Small exercise
 - create a new git repo with `git init`
 - create a text file in the repo and add + commit
 - add one more file and commit
@@ -265,7 +265,7 @@ If you did git add and regret it
 
 
 
-##Remote (eg. github)
+## Remote (eg. github)
 Remote is a server that can host our repository like
 1. github
 2. bitbucket
@@ -274,7 +274,7 @@ Remote is a server that can host our repository like
 
 
 
-###Set up reference to remote
+### Set up reference to remote
 1. by cloning a remote repo
 2. `git remote add <some name> <url>` //git remote add + a name for the remote + the url for the remote  
 	-  You can add several remotes if you like
@@ -283,7 +283,7 @@ Remote is a server that can host our repository like
 
 
 
-###Tagging
+### Tagging
 Tags in git can be used to reference a particular commit (e.g. version1 or sprint1)
 - tag the actual commit:
 	- `git tag -a v1.0 -m "some message here"`
@@ -300,7 +300,7 @@ Tags in git can be used to reference a particular commit (e.g. version1 or sprin
 
 
 
-###Git alias (Not necessary but maybe nice to have)
+### Git alias (Not necessary but maybe nice to have)
 Git aliasses are typically longer commands refered to with a few key strokes. This can be usefull if you find you have long commands that you are using frequently.
 - Examples  
 	1. `git config --global alias.unstage 'reset HEAD --'` //git unstage <filename> will now unstage file: <filename>  
@@ -310,7 +310,7 @@ Git aliasses are typically longer commands refered to with a few key strokes. Th
 
 
 
-###Small exercise
+### Small exercise
 - Create a few aliasses
 - Create a new repo and do 4 commits
 - Add tags to commit no. 2 and 4 
@@ -320,36 +320,18 @@ Git aliasses are typically longer commands refered to with a few key strokes. Th
 
 
 
-##Day1 exercise  
-[Your exercise for today is here]() AND   
+## Day1 exercise  
+[Your exercise for today is here](exercises/git exercise 1.pdf) AND   
 before tomorrow - follow this interactive tutorial [here](http://learngitbranching.js.org/)  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##Day2: Branching and merging  
-###Studymaterial
+## Day2: Branching and merging  
+### Studymaterial
 git book (pro git) page 89-95
 
 
-####What are branches?
+#### What are branches?
 - Branching means you diverge from the main line of development and continue to do work without
 messing with that main line.
 - Branch is a pointer to a commit
@@ -361,17 +343,17 @@ messing with that main line.
 ![](img/branches1.png)  
  
  
-####Why would we need branches? 
+#### Why would we need branches? 
 - To work independently on a feature without involving the rest of the project.
 
 
-####How should i branch
+#### How should i branch
 - "Branch early and branch often" // and merge (in the branch and delete it) equally often (when the feature is tested). 
 - `git branch <branch name>` //Creates a new branch from HEAD (the pointer to the current commit)
 - `git checkout <branch name>` //moves HEAD to the other branch (next commit will now be on this branch. HEAD can only point to one commit at a time (the commit that will be the parent of the next commit)
 
 
-###Create new branches
+### Create new branches
 - Creating a branch just creates a new pointer to the current commit
   - `git branch <branch name>` creates a new branch by that name.
   - there should now be 2 pointers to the current commit (master and the new branch)
@@ -382,7 +364,7 @@ messing with that main line.
   - `git checkout -b <branch name>` creates and checks out the new branch 
 
 
-###Push branch to upstream
+### Push branch to upstream
 - when a branch is created and checked out locally - we cannot push to master
 - we get this message: `fatal: The current branch development has no upstream branch.`
 - So when we push we need to do it like this: `git push --set-upstream origin development` (if origin is our host and development is the branch)
@@ -390,7 +372,7 @@ messing with that main line.
 branches are easy to move around and often refer to different commits as work is completed on them. Branches are easily mutated, often temporary, and always changing.
 
 
-###Changing branch
+### Changing branch
 IMPORTANT: 
 - Git resets your working directory to look like it did the last time you committed on that branch.   
 - It adds, removes, and modifies files automatically to make sure your working
@@ -403,7 +385,7 @@ copy is what the branch looked like on your last commit to it.
 
 
 
-###Lets demo
+### Lets demo
 <img align="right" src="img/demoman.png" />  
 **Demonstrate creating branches and commits in each branc**
 <br><br><br><br><br>
@@ -418,13 +400,13 @@ copy is what the branch looked like on your last commit to it.
 
 
 
-###Small exercise individually
+### Small exercise individually
 1. Create 3 branches
 2. Check them out individually and add a file and commit in each branch
 3. run: `git log --oneline --decorate --graph --all` to see how your git branches look now
 
 
-###Small exercise in pairs
+### Small exercise in pairs
 Work in pairs
 - create a new repo on github
 - clone the repo to local repo
@@ -435,27 +417,27 @@ Work in pairs
 - create a new branch each with your name in it.
 
 
-###Merging
+### Merging
 - First checkout the branch you want to keep
 - `git merge <branch name>` merges <branch name> branch into current branch
 - Now checked out branch points to the last (merged) commit.
 - - Delete the branch that was merged in `git branch -d <branch name>`
 
 
-###Quit merging:
+### Quit merging:
 - `git merge --abort` to stop merging
 
 
 
 
-###Fast-Forward merge
+### Fast-Forward merge
 - A fast-forward merge is a merge in which the head of the branch you are trying to merge into is a direct descendent of the head of the branch you want to merge (E.g. there has been no unshared commits on the current branch since the new branch started off of it).
 - Image below shows how C4 is a direct desendant of C2 and therefore fast-forward merge to master is possible.
 
 ![](img/fastforward.png)  
 
 
-###Three way merge
+### Three way merge
 - Different from fast-forward since the commits/branches being merged does not descent of each other
 - Instead they share a common commit somewhere back in history
 - the 2 commits being merged + the common ancestor are used in a three way merge
@@ -466,7 +448,7 @@ Work in pairs
 
 
 
-###Merge conflicts
+### Merge conflicts
 When you `git merge` and it creates a CONFLICT do `git status` and it tells what to do
 - The file(s) that have conflict(s) must be resolved and then `git add <file>`
 - `git add` resolves the conflict (the added file will be the version going forward)
@@ -476,7 +458,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 
 
 
-###Lets demo
+### Lets demo
 <img align="right" src="img/demoman.png" />  
 **Merge conflicts**
 <br><br><br><br><br>
@@ -491,7 +473,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 9. Solve the conflict and commit.
 
 
-###Small exercise
+### Small exercise
 1. Create a new git repo
 2. Add a text file to the repo and run: `git add .` and `git commit -m "initial commit"`
 3. checkout a new branch: feature1
@@ -501,7 +483,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 7. merge the two branches and resolve conflict
 
 
-###Rebase
+### Rebase
 - To get a straight commit history
   - As if the work done in the 2 branches were done sequentially (not in parallel)
   - `git rebase <branch name>` means our current branch will have all its unique commits **copied** onto the <branch name> branch
@@ -514,7 +496,7 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 
 
 
-###Changing (moving commits) existing branches
+### Changing (moving commits) existing branches
 - HEAD is the currently checkedout commit
 - Normally Head points to a branch name
 - Detaching HEAD
@@ -560,30 +542,30 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 	- So now master is pointing to the development branch (merged) and C2 was changed with some content
 
 
-###Small exercise manipulating branches
+### Small exercise manipulating branches
 1. create a git repo
 2. make 3 commits in master
 3. make 2 new branches: development, feature1
 2. create 3 commits in both development and feature1 (files need to be created or changed in each commit)
 3. Move feature1 to the head of development
 
-###Git issues
+### Git issues
 - Issues are like user stories in a scrum team or
 - Task tracking system with notifications, discussion forum and project planning tool.
 - [See more here](https://guides.github.com/features/issues/)
 
-###Git milestones
+### Git milestones
 - Use mile stones to attach to issues (This ennables us to set deadlines on our issues and to use issues for sprint planning)
 - Use labels to 
 
 
-###Git issues - labels
+### Git issues - labels
 - Labels are for issues a way to categorize issues (often across multiple repos)
 - See example [here](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues/)
 
 
 
-###Small exercise with issues, milestones and labels
+### Small exercise with issues, milestones and labels
 1. In the last repo you created
 	1. create 3 milestones
 	2. Create 2 label: 'new feature' and 'java servlet'
@@ -591,13 +573,13 @@ When you `git merge` and it creates a CONFLICT do `git status` and it tells what
 	4. add Assignees to each issue
 
 
-###Git forking
+### Git forking
 
 
 
-###Git pull request
+### Git pull request
 pull requests are a mechanism for a developer to notify team members that they have completed a feature. Once their feature branch is ready, the developer files a pull request  
 
 
-##Exercise day 2
-The exercise is [here]()
+##[Exercise day 2](exercises/git exercise 2.pdf)
+
