@@ -84,18 +84,20 @@ This topic is about using git from the command-line tool: git bash  <br>
 	- `git help <some command>` get specific info about the command.
 
 ### First repository
-Best choice for most situations: Make project on github, then `git clone <remote repo>` or  
-`git init` inside a directory to make it a git repo.
+Best choice for most situations: Make project on github, then `git clone <remote repo>`. 
+
+Alternatively  `git init` inside a directory to make it a git repo.
 
 ### Lets demo
 
-<img align="right" src="img/demoman.png" />  
-**2 demos:**  
+<img align="right" src="img/demoman.png" /> 
+ 
+**2 demos:** 
+ 
 1. git repo from github and    
 2. initiate locally
-<br><br><br><br><br>
 
-1. Starting from github   
+- Starting from github   
   - Create github repo
   - Add collaborator
   - clone the project
@@ -106,7 +108,7 @@ Best choice for most situations: Make project on github, then `git clone <remote
   - Create some changes on the remote repo and commit
   - fetch and merge locally.
 
-2. Starting locally
+- Starting locally
  - Create netbeans maven project
  - git init
  - git add, commit
