@@ -69,7 +69,7 @@ These 2 days covers what you need to know to work efficiently as a team using gi
 The studypoint exercise for this week is to get some preliminary code for your project up on git, and have all of members of the group do at least a couple of commits each.
 
 #### Semester mid-term evaluation
-No - not an exam, but we need to do the semesterly quality assurance with feedback on all aspects of 2 second semester. Delphi (3 good things and three problems, passing around in class) and a questionaire followed by in class discussions.
+No - not an exam, but we need to do the semesterly quality assurance with feedback on all aspects of 2 second semester. Delphi (3 good things and three problems, passing around in class) and a [questionaire](https://cphbusiness.mrooms.net/course/view.php?id=745) followed by in class discussions.
 
 
 ### Friday
